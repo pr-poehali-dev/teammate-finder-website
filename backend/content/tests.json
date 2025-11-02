@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Get all news",
+      "method": "GET",
+      "path": "/?type=news",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "news": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get VIP tiers",
+      "method": "GET",
+      "path": "/?type=vip",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "vip_tiers": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

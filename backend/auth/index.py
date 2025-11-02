@@ -18,6 +18,9 @@ def get_db_connection():
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode()).hexdigest()
 
+def verify_password(password: str, password_hash: str) -> bool:
+    return hash_password(password) == password_hash
+
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     method: str = event.get('httpMethod', 'POST')
     
@@ -73,22 +76,21 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
             }
         
         else:
-            password_hash = hash_password(password)
             cur.execute(
-                "SELECT id, username FROM admins WHERE username = %s AND password_hash = %s",
-                (username, password_hash)
+                "SELECT id, username, password_hash FROM admins WHERE username = %s",
+                (username,)
             )
             
             result = cur.fetchone()
             
-            if result:
-                admin_id, username = result
+            if result and verify_password(password, result[2]):
+                admin_id, username_db = result[0], result[1]
                 return {
                     'statusCode': 200,
                     'headers': headers,
                     'body': json.dumps({
                         'message': 'Авторизация успешна',
-                        'token': f'admin_{admin_id}_{username}'
+                        'token': f'admin_{admin_id}_{username_db}'
                     })
                 }
             else:
