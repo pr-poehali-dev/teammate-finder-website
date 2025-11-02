@@ -1,0 +1,33 @@
+{
+  "tests": [
+    {
+      "name": "Get approved listings",
+      "method": "GET",
+      "path": "/?status=approved",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "listings": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Create new listing",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "title": "Ищу команду для рейда",
+        "description": "Нужна группа для набега на клан",
+        "game_mode": "PVP",
+        "player_count": "3-5",
+        "discord_tag": "player#1234",
+        "image_url": "https://example.com/image.jpg"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "id": "number",
+        "message": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

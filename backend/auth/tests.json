@@ -1,0 +1,36 @@
+{
+  "tests": [
+    {
+      "name": "Register admin",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "username": "admin",
+        "password": "password123",
+        "action": "register"
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "message": "string",
+        "token": "string"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Login admin",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "username": "admin",
+        "password": "password123",
+        "action": "login"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "message": "string",
+        "token": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
