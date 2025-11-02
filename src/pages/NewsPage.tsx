@@ -16,66 +16,66 @@ interface NewsItem {
 const newsData: NewsItem[] = [
   {
     id: 1,
-    title: 'Открытие нового сезона - Wipe 2 ноября!',
-    date: '2025-11-01',
+    title: 'Запуск платформы поиска тиммейтов!',
+    date: '2025-11-02',
     category: 'Важное',
     isImportant: true,
-    content: 'Клан DST объявляет о начале нового сезона! Wipe состоится 2 ноября в 19:00 МСК. Готовьтесь к эпичным битвам, новым рейдам и покорению острова! Все игроки стартуют с нуля - это твой шанс стать легендой сервера.',
+    content: 'Мы рады объявить о запуске новой платформы для поиска напарников в Rust! Теперь вы можете создавать объявления, указывать свои требования и находить идеальных тиммейтов за считанные часы. Платформа работает в режиме модерации для вашей безопасности.',
     image: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=800&q=80'
   },
   {
     id: 2,
-    title: 'Обновление VIP-системы: новые привилегии',
-    date: '2025-10-28',
+    title: 'VIP продвижение для кланов уже доступно',
+    date: '2025-11-01',
     category: 'VIP',
-    content: 'Мы добавили новые VIP-пакеты с эксклюзивными скинами, ускоренным фармом и приоритетным входом на сервер. VIP Elite теперь включает персональный вертолёт и доступ к секретным локациям. Проверьте раздел VIP услуг!',
+    content: 'Представляем новую услугу — VIP продвижение объявлений! Поднимите свой клан в топ и привлеките лучших игроков. Три тарифа на выбор: Базовое (499₽), Премиум (999₽) и Элитное (1999₽) продвижение. Максимальная видимость и быстрый набор гарантированы!',
     image: 'https://images.unsplash.com/photo-1614294148960-9aa740632a87?w=800&q=80'
   },
   {
     id: 3,
-    title: 'Турнир DST: Битва кланов 15 ноября',
-    date: '2025-10-25',
-    category: 'События',
-    isImportant: true,
-    content: 'Регистрация на грандиозный турнир уже открыта! Сражайтесь за главный приз - 50,000 руб и эксклюзивный титул "Разрушители". Формат: 5v5, арена на карго. Регистрация команд до 10 ноября в нашем Discord.',
-    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80'
-  },
-  {
-    id: 4,
-    title: 'Новые правила рейдов и защиты базы',
-    date: '2025-10-20',
-    category: 'Правила',
-    content: 'Введены обновлённые правила по офлайн-рейдам: теперь атаковать спящих игроков можно только после 22:00. Добавлен режим "Защищённая зона" для новичков на первые 48 часов. Читайте полные правила в Discord клана DST.',
-  },
-  {
-    id: 5,
-    title: 'DST расширяет состав - набор в клан открыт!',
-    date: '2025-10-15',
+    title: 'Клан DST открывает набор!',
+    date: '2025-10-30',
     category: 'Набор',
-    content: 'Клан DST ищет активных и опытных игроков! Требования: опыт от 500 часов, Discord, микрофон, возраст 16+. Мы предлагаем командную игру, совместные рейды и доступ к клановым ресурсам. Подавайте заявки через форму на главной.',
+    isImportant: true,
+    content: 'Death Strike Team ищет новых бойцов! Требования: 3000+ часов, знание всех RT, возраст 16+, онлайн 6+ часов в день. Мы предлагаем дружелюбный коллектив, совместные рейды и развитие навыков. Присоединяйся к легенде!',
     image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80'
   },
   {
-    id: 6,
-    title: 'Технические работы - плановое обновление',
-    date: '2025-10-12',
-    category: 'Тех. работы',
-    content: 'Сервер будет недоступен 13 октября с 03:00 до 05:00 МСК для установки патчей и улучшения производительности. После обновления ожидается снижение лагов и улучшение стабильности FPS.',
+    id: 4,
+    title: 'Новые правила модерации объявлений',
+    date: '2025-10-28',
+    category: 'Правила',
+    content: 'Для обеспечения качества объявлений мы ввели систему модерации. Все новые объявления проверяются в течение 2-4 часов. Запрещены: мат, спам, фейковые контакты, реклама сторонних сервисов. Нарушители получают бан навсегда.',
   },
   {
-    id: 7,
-    title: 'Итоги прошлого сезона: статистика и победители',
-    date: '2025-10-08',
+    id: 5,
+    title: 'Топ-5 советов по поиску тиммейтов',
+    date: '2025-10-25',
+    category: 'Советы',
+    content: '1) Подробно опишите свой опыт и цели. 2) Укажите точное время онлайна. 3) Будьте честны о своём уровне игры. 4) Откликайтесь быстро на заявки. 5) Используйте VIP продвижение для ускорения поиска. Следуя этим советам, вы найдёте напарников в разы быстрее!',
+    image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80'
+  },
+  {
+    id: 6,
+    title: 'Статистика платформы за первую неделю',
+    date: '2025-10-20',
     category: 'Статистика',
-    content: 'Прошлый сезон завершён! Топ-3 игрока по рейдам: ShadowKiller (47 рейдов), IronFist (39), NightWolf (35). Самая укреплённая база принадлежала клану APEX - 15 слоёв защиты. Полная статистика доступна на форуме.',
+    content: 'За первую неделю работы платформы: создано 127 объявлений, 89 одобрено, найдено 230+ тиммейтов, 15 кланов используют VIP продвижение. Средний срок поиска напарников — 2.3 дня. Спасибо за доверие!',
     image: 'https://images.unsplash.com/photo-1579762715118-a6f1d4b934f1?w=800&q=80'
   },
   {
-    id: 8,
-    title: 'Новая карта: Snow Valley добавлена на сервер',
-    date: '2025-10-05',
+    id: 7,
+    title: 'Discord-интеграция в разработке',
+    date: '2025-10-15',
     category: 'Обновления',
-    content: 'Встречайте новую зимнюю карту Snow Valley! Суровые условия, ограниченные ресурсы и новые испытания ждут самых отважных. Карта доступна в ротации каждые выходные.',
+    content: 'Мы работаем над интеграцией с Discord! Скоро вы сможете получать уведомления о новых заявках прямо в Discord, автоматически проверять игроков и управлять объявлениями через бота. Релиз запланирован на конец месяца.',
+  },
+  {
+    id: 8,
+    title: 'Борьба с мультиаккаунтами',
+    date: '2025-10-10',
+    category: 'Безопасность',
+    content: 'Мы внедрили систему защиты от мультиаккаунтов и спама. Каждый пользователь может создавать не более 3 активных объявлений одновременно. Повторные нарушения правил ведут к перманентному бану по IP и устройству.',
   }
 ];
 
@@ -89,12 +89,12 @@ export default function NewsPage() {
     const colors: Record<string, string> = {
       'Важное': 'bg-red-600',
       'VIP': 'bg-yellow-600',
-      'События': 'bg-blue-600',
-      'Правила': 'bg-purple-600',
       'Набор': 'bg-green-600',
-      'Тех. работы': 'bg-gray-600',
+      'Правила': 'bg-purple-600',
+      'Советы': 'bg-blue-600',
       'Статистика': 'bg-orange-600',
-      'Обновления': 'bg-cyan-600'
+      'Обновления': 'bg-cyan-600',
+      'Безопасность': 'bg-pink-600'
     };
     return colors[category] || 'bg-gray-600';
   };
@@ -109,8 +109,8 @@ export default function NewsPage() {
                 <Icon name="Newspaper" size={28} className="text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">Новости клана DST</h1>
-                <p className="text-sm text-muted-foreground">Актуальные события сервера</p>
+                <h1 className="text-2xl font-bold">Новости платформы</h1>
+                <p className="text-sm text-muted-foreground">Актуальные обновления</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -127,7 +127,7 @@ export default function NewsPage() {
         <div className="mb-8">
           <h2 className="text-3xl font-bold mb-2">Последние новости</h2>
           <p className="text-muted-foreground">
-            Следите за обновлениями, событиями и анонсами сервера Rust от клана DST
+            Следите за обновлениями и новостями платформы поиска тиммейтов
           </p>
         </div>
 
@@ -194,7 +194,7 @@ export default function NewsPage() {
                   onClick={() => window.location.href = '/vip'}
                 >
                   <Icon name="Crown" size={20} className="mr-2" />
-                  VIP услуги
+                  VIP продвижение
                 </Button>
                 <Button 
                   variant="outline" 
@@ -207,51 +207,68 @@ export default function NewsPage() {
                 <Button 
                   variant="outline" 
                   className="w-full justify-start"
-                  onClick={() => window.open('https://discord.gg/dst', '_blank')}
+                  onClick={() => window.location.href = '/'}
                 >
-                  <Icon name="MessageSquare" size={20} className="mr-2" />
-                  Discord сервер
+                  <Icon name="Users" size={20} className="mr-2" />
+                  Найти тиммейтов
                 </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Icon name="TrendingUp" size={24} />
+                  Статистика
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-muted-foreground">Объявлений создано</span>
+                    <span className="font-bold">127</span>
+                  </div>
+                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-full bg-primary w-[70%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-muted-foreground">Игроков нашли пару</span>
+                    <span className="font-bold">230+</span>
+                  </div>
+                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-full bg-green-500 w-[85%]"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm text-muted-foreground">VIP кланов</span>
+                    <span className="font-bold">15</span>
+                  </div>
+                  <div className="h-2 bg-secondary rounded-full overflow-hidden">
+                    <div className="h-full bg-yellow-500 w-[35%]"></div>
+                  </div>
+                </div>
               </CardContent>
             </Card>
 
             <Card className="border-border bg-gradient-to-br from-primary/10 to-primary/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Icon name="Trophy" size={24} />
-                  Предстоящие события
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="border-l-4 border-red-600 pl-4">
-                  <h4 className="font-bold">Wipe сервера</h4>
-                  <p className="text-sm text-muted-foreground">2 ноября, 19:00 МСК</p>
-                </div>
-                <div className="border-l-4 border-yellow-600 pl-4">
-                  <h4 className="font-bold">VIP распродажа</h4>
-                  <p className="text-sm text-muted-foreground">5-7 ноября, -30%</p>
-                </div>
-                <div className="border-l-4 border-blue-600 pl-4">
-                  <h4 className="font-bold">Турнир кланов</h4>
-                  <p className="text-sm text-muted-foreground">15 ноября, старт</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border bg-gradient-to-br from-destructive/10 to-destructive/5">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Icon name="Users" size={24} />
-                  Набор в клан
+                  <Icon name="Sparkles" size={24} />
+                  Совет дня
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  DST ищет опытных игроков! Станьте частью легендарного клана.
+                <p className="text-sm text-muted-foreground">
+                  Используйте VIP продвижение для закрепления вашего объявления в топе. Это увеличивает шансы найти идеальных тиммейтов в 10 раз!
                 </p>
-                <Button className="w-full bg-destructive hover:bg-destructive/90">
-                  <Icon name="UserPlus" size={20} className="mr-2" />
-                  Подать заявку
+                <Button 
+                  className="w-full mt-4" 
+                  onClick={() => window.location.href = '/vip'}
+                >
+                  Узнать больше
                 </Button>
               </CardContent>
             </Card>
@@ -259,10 +276,11 @@ export default function NewsPage() {
         </div>
       </main>
 
-      <footer className="border-t border-border mt-16 py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2025 DST Clan. Все права защищены.</p>
-          <p className="text-sm mt-2">Официальный сервер Rust клана DST</p>
+      <footer className="border-t border-border mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center text-sm text-muted-foreground">
+            © 2025 Платформа поиска тимейтов Rust. Все права защищены.
+          </div>
         </div>
       </footer>
     </div>

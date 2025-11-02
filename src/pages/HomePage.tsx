@@ -98,14 +98,14 @@ export default function HomePage() {
                 <Icon name="Users" size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-foreground">DST RUST SERVER</h1>
-                <p className="text-sm text-muted-foreground">Официальный сервер клана DST</p>
+                <h1 className="text-2xl font-bold text-foreground">Поиск тимейтов Rust</h1>
+                <p className="text-sm text-muted-foreground">Найди напарников для игры</p>
               </div>
             </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="/" className="text-foreground hover:text-primary transition-colors">Поиск игроков</a>
               <a href="/news" className="text-muted-foreground hover:text-primary transition-colors">Новости</a>
-              <a href="/vip" className="text-muted-foreground hover:text-primary transition-colors">VIP услуги</a>
+              <a href="/vip" className="text-muted-foreground hover:text-primary transition-colors">VIP продвижение</a>
               <a href="/clan" className="text-muted-foreground hover:text-primary transition-colors">О клане DST</a>
             </nav>
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -200,121 +200,121 @@ export default function HomePage() {
           alt="Hero"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 z-20 flex items-center justify-center">
-          <div className="text-center animate-fade-in">
-            <Badge className="mb-4 bg-red-600 text-lg px-4 py-2">Клан DST</Badge>
-            <h2 className="text-5xl font-bold text-white mb-4">Найди своих тиммейтов</h2>
-            <p className="text-xl text-gray-200 mb-6">Официальный сервер клана Death Strike Team</p>
-            <div className="flex gap-4 justify-center">
-              <Button size="lg" className="bg-red-600 hover:bg-red-700">
-                <Icon name="Users" size={20} className="mr-2" />
-                Поиск игроков
-              </Button>
-              <Button size="lg" variant="outline" className="bg-background/80 backdrop-blur" onClick={() => window.location.href = '/clan'}>
-                <Icon name="Shield" size={20} className="mr-2" />
-                О клане DST
-              </Button>
-            </div>
+        <div className="absolute inset-0 z-20 flex items-center justify-center text-center px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-5xl font-bold text-white mb-4 drop-shadow-lg">
+              Найди идеальных напарников для Rust
+            </h2>
+            <p className="text-xl text-white/90 mb-8 drop-shadow-lg">
+              Создавай объявления, находи игроков и доминируй на сервере вместе
+            </p>
+            <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => setIsDialogOpen(true)}>
+              <Icon name="Plus" size={24} className="mr-2" />
+              Создать объявление
+            </Button>
           </div>
         </div>
       </div>
 
       <main className="container mx-auto px-4 py-12">
-        <div className="mb-8">
-          <h3 className="text-3xl font-bold mb-2">Активные объявления</h3>
-          <p className="text-muted-foreground">Найдите свою команду среди {listings.length} активных игроков</p>
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <h3 className="text-3xl font-bold mb-2">Актуальные объявления</h3>
+            <p className="text-muted-foreground">
+              Игроки ищут тиммейтов для совместной игры
+            </p>
+          </div>
+          <Button variant="outline" onClick={fetchListings}>
+            <Icon name="RefreshCw" size={20} className="mr-2" />
+            Обновить
+          </Button>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {listings.map((listing) => (
-            <Card key={listing.id} className="overflow-hidden border-border hover:border-primary transition-all duration-300 hover:scale-105 animate-fade-in group">
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={listing.image_url}
-                  alt={listing.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute top-3 right-3 flex gap-2">
-                  <Badge className="bg-primary text-primary-foreground">
-                    {listing.game_mode}
-                  </Badge>
+        {listings.length === 0 ? (
+          <Card className="border-border">
+            <CardContent className="flex flex-col items-center justify-center py-16">
+              <Icon name="Search" size={64} className="text-muted-foreground mb-4" />
+              <h3 className="text-2xl font-bold mb-2">Объявлений пока нет</h3>
+              <p className="text-muted-foreground mb-6">Будьте первым, кто создаст объявление!</p>
+              <Button onClick={() => setIsDialogOpen(true)}>
+                <Icon name="Plus" size={20} className="mr-2" />
+                Создать объявление
+              </Button>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {listings.map((listing) => (
+              <Card key={listing.id} className="border-border hover:border-primary transition-colors">
+                <div className="relative h-48 overflow-hidden rounded-t-lg">
+                  <img
+                    src={listing.image_url}
+                    alt={listing.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 right-4 flex gap-2">
+                    <Badge className="bg-primary">{listing.game_mode}</Badge>
+                    <Badge variant="secondary">{listing.player_count}</Badge>
+                  </div>
                 </div>
-              </div>
-              <CardHeader>
-                <CardTitle className="text-xl">{listing.title}</CardTitle>
-                <CardDescription className="flex items-center gap-2 text-muted-foreground">
-                  <Icon name="Users" size={16} />
-                  {listing.player_count}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground line-clamp-3">
-                  {listing.description}
-                </p>
-              </CardContent>
-              <CardFooter className="flex items-center justify-between border-t border-border pt-4">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <Icon name="MessageSquare" size={16} />
-                  <span className="font-mono">{listing.discord_tag}</span>
-                </div>
-                <Button variant="outline" size="sm" className="hover:bg-primary hover:text-primary-foreground">
-                  Связаться
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
-        </div>
-
-        {listings.length === 0 && (
-          <div className="text-center py-12">
-            <Icon name="Users" size={64} className="mx-auto text-muted-foreground mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Пока нет объявлений</h3>
-            <p className="text-muted-foreground mb-6">Будьте первым, кто создаст объявление о поиске команды</p>
-            <Button onClick={() => setIsDialogOpen(true)} className="bg-primary hover:bg-primary/90">
-              Создать объявление
-            </Button>
+                <CardHeader>
+                  <CardTitle className="text-xl">{listing.title}</CardTitle>
+                  <CardDescription className="flex items-center gap-2 text-xs">
+                    <Icon name="Calendar" size={14} />
+                    {new Date(listing.created_at).toLocaleDateString('ru-RU')}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                    {listing.description}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm">
+                    <Icon name="MessageCircle" size={16} className="text-primary" />
+                    <span className="font-mono text-primary">{listing.discord_tag}</span>
+                  </div>
+                </CardContent>
+                <CardFooter>
+                  <Button className="w-full" variant="outline">
+                    <Icon name="MessageSquare" size={18} className="mr-2" />
+                    Связаться в Discord
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
           </div>
         )}
       </main>
 
-      <footer className="border-t border-border mt-16 py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <footer className="border-t border-border mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
-                  <Icon name="Shield" size={20} className="text-white" />
-                </div>
-                <h3 className="text-lg font-bold">DST Clan</h3>
-              </div>
-              <p className="text-sm text-muted-foreground">Официальный сервер Rust клана Death Strike Team. Доминируем с 2023 года.</p>
+              <h4 className="font-bold mb-4">О платформе</h4>
+              <p className="text-sm text-muted-foreground">
+                Платформа для поиска напарников в Rust. Создавай объявления, находи игроков и стройте команду мечты.
+              </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Навигация</h4>
-              <div className="space-y-2">
-                <a href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Поиск игроков</a>
-                <a href="/news" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Новости</a>
-                <a href="/vip" className="block text-sm text-muted-foreground hover:text-primary transition-colors">VIP услуги</a>
-                <a href="/clan" className="block text-sm text-muted-foreground hover:text-primary transition-colors">О клане DST</a>
-              </div>
+              <h4 className="font-bold mb-4">Ссылки</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="/" className="text-muted-foreground hover:text-primary">Поиск игроков</a></li>
+                <li><a href="/news" className="text-muted-foreground hover:text-primary">Новости</a></li>
+                <li><a href="/vip" className="text-muted-foreground hover:text-primary">VIP продвижение</a></li>
+                <li><a href="/clan" className="text-muted-foreground hover:text-primary">О клане DST</a></li>
+              </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4">Связь</h4>
-              <div className="space-y-2">
-                <a href="https://discord.gg/dst" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                  <Icon name="MessageSquare" size={16} />
-                  Discord сервер
-                </a>
-                <a href="https://t.me/dst_clan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
-                  <Icon name="Send" size={16} />
-                  Telegram канал
-                </a>
-              </div>
+              <h4 className="font-bold mb-4">Контакты</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2">
+                  <Icon name="MessageCircle" size={16} />
+                  <a href="https://discord.gg/qcu8n8rRg6" className="text-primary hover:underline">Discord сервер</a>
+                </li>
+              </ul>
             </div>
           </div>
-          <div className="text-center text-muted-foreground border-t border-border pt-6">
-            <p>&copy; 2025 DST Clan. Все права защищены.</p>
-            <p className="text-sm mt-2">Death Strike Team • Основан в 2023</p>
+          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
+            © 2025 Платформа поиска тимейтов Rust. Все права защищены.
           </div>
         </div>
       </footer>

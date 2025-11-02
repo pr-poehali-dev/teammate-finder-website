@@ -18,79 +18,77 @@ interface VipTier {
 const vipTiers: VipTier[] = [
   {
     id: 'basic',
-    name: 'VIP Basic',
-    price: '299',
-    duration: '30 дней',
+    name: 'Базовое продвижение',
+    price: '499',
+    duration: '7 дней',
     color: 'from-gray-600 to-gray-700',
     features: [
-      'Ускоренный сбор ресурсов x1.5',
-      'Набор стартовых ресурсов',
-      'Цветной ник в чате',
-      'Доступ к VIP-командам',
-      'Приоритет в очереди на вход',
-      '2 дополнительных слота в рюкзаке'
+      'Закрепление объявления в топе',
+      'Выделение яркой рамкой',
+      'Показ в течение 7 дней',
+      'Приоритет в поиске',
+      'Значок "VIP" на объявлении'
     ]
   },
   {
     id: 'premium',
-    name: 'VIP Premium',
-    price: '599',
-    duration: '30 дней',
+    name: 'Премиум продвижение',
+    price: '999',
+    duration: '14 дней',
     color: 'from-yellow-600 to-orange-600',
     popular: true,
     features: [
-      'Все из VIP Basic',
-      'Ускоренный сбор ресурсов x2',
-      'Уникальные скины оружия (5 шт)',
-      'Телепортация домой /home (3 точки)',
-      'Набор строительных материалов',
-      'Снятие ограничения на рюкзак',
-      'Команда /kit premium каждые 12ч',
-      'Эксклюзивный Discord роль'
+      'Все из базового пакета',
+      'Закрепление в ТОП-3',
+      'Анимированная рамка',
+      'Показ в течение 14 дней',
+      'Выделение на главной странице',
+      'Значок "⭐ PREMIUM"',
+      'Упоминание в новостях',
+      'Приоритетная модерация'
     ]
   },
   {
     id: 'elite',
-    name: 'VIP Elite',
-    price: '999',
+    name: 'Элитное продвижение',
+    price: '1999',
     duration: '30 дней',
     color: 'from-purple-600 to-pink-600',
     features: [
-      'Все из VIP Premium',
-      'Ускоренный сбор ресурсов x2.5',
-      'Уникальные скины оружия (15 шт)',
-      'Эксклюзивные скины одежды',
-      'Персональный мини-вертолёт',
-      'Телепортация /home (10 точек)',
-      'Доступ к секретным локациям',
-      'Команда /kit elite каждые 6ч',
-      'Личный банк на 50 слотов',
-      'Неограниченный рюкзак',
-      'Приоритетная тех. поддержка'
+      'Все из премиум пакета',
+      'Закрепление в ТОП-1',
+      'Максимальный охват аудитории',
+      'Показ в течение 30 дней',
+      'Баннер на главной странице',
+      'Уникальная анимация',
+      'Значок "👑 ELITE"',
+      'Реклама в Discord сервере',
+      'Публикация в социальных сетях',
+      'Аналитика просмотров'
     ]
   }
 ];
 
 const bonusFeatures = [
   {
-    icon: 'Zap',
-    title: 'Мгновенная активация',
-    description: 'VIP активируется сразу после оплаты'
-  },
-  {
-    icon: 'Shield',
-    title: 'Защита базы',
-    description: 'Дополнительные слои защиты для VIP игроков'
-  },
-  {
-    icon: 'Gift',
-    title: 'Ежедневные бонусы',
-    description: 'Получайте ресурсы каждый день'
+    icon: 'TrendingUp',
+    title: 'Больше просмотров',
+    description: 'Ваш клан увидят в 10 раз больше игроков'
   },
   {
     icon: 'Users',
-    title: 'VIP сообщество',
-    description: 'Закрытый канал в Discord для VIP'
+    title: 'Быстрый набор',
+    description: 'Найдите напарников за считанные часы'
+  },
+  {
+    icon: 'Star',
+    title: 'Премиум статус',
+    description: 'Выделитесь среди сотен объявлений'
+  },
+  {
+    icon: 'Zap',
+    title: 'Мгновенная активация',
+    description: 'Продвижение начинается сразу после оплаты'
   }
 ];
 
@@ -116,8 +114,8 @@ export default function VipPage() {
                 <Icon name="Crown" size={28} className="text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">VIP услуги DST</h1>
-                <p className="text-sm text-muted-foreground">Эксклюзивные привилегии сервера</p>
+                <h1 className="text-2xl font-bold">VIP продвижение кланов</h1>
+                <p className="text-sm text-muted-foreground">Привлеките больше игроков в свой клан</p>
               </div>
             </div>
             <div className="flex items-center gap-4">
@@ -133,9 +131,9 @@ export default function VipPage() {
       <section className="bg-gradient-to-br from-primary/20 to-primary/5 py-16">
         <div className="container mx-auto px-4 text-center">
           <Badge className="mb-4 bg-yellow-600">Специальное предложение</Badge>
-          <h2 className="text-4xl font-bold mb-4">Получите преимущество в игре</h2>
+          <h2 className="text-4xl font-bold mb-4">Продвиньте свой клан в топ</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            VIP статус на сервере Rust клана DST - это ускоренное развитие, эксклюзивный контент и особые привилегии
+            VIP продвижение обеспечит максимальную видимость вашего объявления и привлечёт лучших игроков
           </p>
         </div>
       </section>
@@ -192,7 +190,7 @@ export default function VipPage() {
                   ) : (
                     <>
                       <Icon name="ShoppingCart" size={20} className="mr-2" />
-                      Купить VIP
+                      Купить продвижение
                     </>
                   )}
                 </Button>
@@ -202,7 +200,7 @@ export default function VipPage() {
         </div>
 
         <section className="mb-16">
-          <h3 className="text-3xl font-bold text-center mb-8">Дополнительные преимущества</h3>
+          <h3 className="text-3xl font-bold text-center mb-8">Преимущества VIP продвижения</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {bonusFeatures.map((feature, index) => (
               <Card key={index} className="border-border text-center">
@@ -220,88 +218,86 @@ export default function VipPage() {
           </div>
         </section>
 
-        <section className="bg-gradient-to-br from-destructive/10 to-destructive/5 rounded-lg p-8 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <Badge className="mb-4 bg-red-600">Ограниченное предложение</Badge>
-              <h3 className="text-3xl font-bold mb-4">Распродажа VIP -30%</h3>
-              <p className="text-muted-foreground mb-6">
-                С 5 по 7 ноября скидка 30% на все VIP пакеты! Не упустите шанс получить максимальные привилегии по лучшей цене.
-              </p>
-              <div className="flex items-center gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-red-600">2</div>
-                  <div className="text-sm text-muted-foreground">дня</div>
+        <section className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg p-8 mb-16">
+          <div className="max-w-3xl mx-auto text-center">
+            <Icon name="Info" size={48} className="text-primary mx-auto mb-4" />
+            <h3 className="text-2xl font-bold mb-4">Как это работает?</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">
+                  1
                 </div>
-                <div className="text-3xl">:</div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-red-600">14</div>
-                  <div className="text-sm text-muted-foreground">часов</div>
-                </div>
-                <div className="text-3xl">:</div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-red-600">37</div>
-                  <div className="text-sm text-muted-foreground">минут</div>
-                </div>
+                <h4 className="font-bold mb-2">Создайте объявление</h4>
+                <p className="text-sm text-muted-foreground">
+                  Опубликуйте информацию о вашем клане
+                </p>
               </div>
-            </div>
-            <div className="bg-background/50 rounded-lg p-6">
-              <h4 className="font-bold text-xl mb-4">Часто задаваемые вопросы</h4>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-semibold mb-1">Как активировать VIP?</p>
-                  <p className="text-sm text-muted-foreground">VIP активируется автоматически в течение 5 минут после оплаты на вашем игровом аккаунте.</p>
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">
+                  2
                 </div>
-                <div>
-                  <p className="font-semibold mb-1">Можно ли продлить VIP?</p>
-                  <p className="text-sm text-muted-foreground">Да, вы можете продлить VIP в любой момент. Время суммируется.</p>
+                <h4 className="font-bold mb-2">Выберите пакет</h4>
+                <p className="text-sm text-muted-foreground">
+                  Подберите подходящий тариф продвижения
+                </p>
+              </div>
+              <div>
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-3 text-white font-bold">
+                  3
                 </div>
-                <div>
-                  <p className="font-semibold mb-1">Сохраняется ли VIP после вайпа?</p>
-                  <p className="text-sm text-muted-foreground">Да, VIP статус сохраняется и работает на всех вайпах до окончания срока действия.</p>
-                </div>
+                <h4 className="font-bold mb-2">Получайте заявки</h4>
+                <p className="text-sm text-muted-foreground">
+                  Ваше объявление в топе — игроки сами найдут вас
+                </p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="text-center">
-          <Card className="border-2 border-primary max-w-2xl mx-auto">
-            <CardHeader>
-              <CardTitle className="text-2xl flex items-center justify-center gap-2">
-                <Icon name="HelpCircle" size={28} />
-                Нужна помощь?
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-6">
-                Есть вопросы по VIP услугам? Наша команда поддержки клана DST готова помочь!
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  variant="outline"
-                  onClick={() => window.open('https://discord.gg/dst', '_blank')}
-                >
-                  <Icon name="MessageSquare" size={20} className="mr-2" />
-                  Discord поддержка
-                </Button>
-                <Button 
-                  variant="outline"
-                  onClick={() => window.open('https://t.me/dst_support', '_blank')}
-                >
-                  <Icon name="Send" size={20} className="mr-2" />
-                  Telegram
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+        <section>
+          <h3 className="text-3xl font-bold text-center mb-8">Часто задаваемые вопросы</h3>
+          <div className="max-w-3xl mx-auto space-y-4">
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-lg">Когда начнётся продвижение?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Продвижение активируется сразу после оплаты. Ваше объявление автоматически попадает в топ в течение 5 минут.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-lg">Можно ли продлить продвижение?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  Да, вы можете продлить любой пакет в любое время. При продлении до окончания текущего периода время суммируется.
+                </p>
+              </CardContent>
+            </Card>
+            
+            <Card className="border-border">
+              <CardHeader>
+                <CardTitle className="text-lg">Что если я не наберу игроков?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  VIP продвижение гарантирует максимальную видимость вашего объявления. В 95% случаев кланы находят игроков в первые 2-3 дня.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
         </section>
       </main>
 
-      <footer className="border-t border-border mt-16 py-8">
-        <div className="container mx-auto px-4 text-center text-muted-foreground">
-          <p>&copy; 2025 DST Clan. Все права защищены.</p>
-          <p className="text-sm mt-2">Официальный сервер Rust клана DST</p>
+      <footer className="border-t border-border mt-16">
+        <div className="container mx-auto px-4 py-8">
+          <div className="text-center text-sm text-muted-foreground">
+            © 2025 Платформа поиска тимейтов Rust. Все права защищены.
+          </div>
         </div>
       </footer>
     </div>
