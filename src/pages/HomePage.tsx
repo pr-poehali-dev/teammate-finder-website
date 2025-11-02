@@ -98,16 +98,15 @@ export default function HomePage() {
                 <Icon name="Users" size={24} className="text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-foreground">RUST TEAMMATES</h1>
-                <p className="text-sm text-muted-foreground">Поиск напарников для игры</p>
+                <h1 className="text-2xl font-bold text-foreground">DST RUST SERVER</h1>
+                <p className="text-sm text-muted-foreground">Официальный сервер клана DST</p>
               </div>
             </div>
             <nav className="hidden md:flex items-center gap-6">
-              <a href="#" className="text-foreground hover:text-primary transition-colors">Главная</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Новости</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">VIP услуги</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Боты для кланов</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Наш клан</a>
+              <a href="/" className="text-foreground hover:text-primary transition-colors">Поиск игроков</a>
+              <a href="/news" className="text-muted-foreground hover:text-primary transition-colors">Новости</a>
+              <a href="/vip" className="text-muted-foreground hover:text-primary transition-colors">VIP услуги</a>
+              <a href="/clan" className="text-muted-foreground hover:text-primary transition-colors">О клане DST</a>
             </nav>
             <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
               <DialogTrigger asChild>
@@ -203,12 +202,19 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center animate-fade-in">
-            <h2 className="text-5xl font-bold text-white mb-4">Найди своих напарников</h2>
-            <p className="text-xl text-gray-200 mb-6">Присоединяйся к командам или создавай свою</p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              <Icon name="Search" size={20} className="mr-2" />
-              Искать игроков
-            </Button>
+            <Badge className="mb-4 bg-red-600 text-lg px-4 py-2">Клан DST</Badge>
+            <h2 className="text-5xl font-bold text-white mb-4">Найди своих тиммейтов</h2>
+            <p className="text-xl text-gray-200 mb-6">Официальный сервер клана Death Strike Team</p>
+            <div className="flex gap-4 justify-center">
+              <Button size="lg" className="bg-red-600 hover:bg-red-700">
+                <Icon name="Users" size={20} className="mr-2" />
+                Поиск игроков
+              </Button>
+              <Button size="lg" variant="outline" className="bg-background/80 backdrop-blur" onClick={() => window.location.href = '/clan'}>
+                <Icon name="Shield" size={20} className="mr-2" />
+                О клане DST
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -271,38 +277,44 @@ export default function HomePage() {
         )}
       </main>
 
-      <footer className="border-t border-border mt-12">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="border-t border-border mt-16 py-8">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h4 className="font-bold mb-3">О проекте</h4>
-              <p className="text-sm text-muted-foreground">
-                Платформа для поиска тиммейтов в Rust. Находите игроков, создавайте кланы, побеждайте вместе.
-              </p>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center">
+                  <Icon name="Shield" size={20} className="text-white" />
+                </div>
+                <h3 className="text-lg font-bold">DST Clan</h3>
+              </div>
+              <p className="text-sm text-muted-foreground">Официальный сервер Rust клана Death Strike Team. Доминируем с 2023 года.</p>
             </div>
             <div>
-              <h4 className="font-bold mb-3">Навигация</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary">Главная</a></li>
-                <li><a href="#" className="hover:text-primary">Новости</a></li>
-                <li><a href="#" className="hover:text-primary">VIP услуги</a></li>
-                <li><a href="#" className="hover:text-primary">Боты для кланов</a></li>
-              </ul>
+              <h4 className="font-bold mb-4">Навигация</h4>
+              <div className="space-y-2">
+                <a href="/" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Поиск игроков</a>
+                <a href="/news" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Новости</a>
+                <a href="/vip" className="block text-sm text-muted-foreground hover:text-primary transition-colors">VIP услуги</a>
+                <a href="/clan" className="block text-sm text-muted-foreground hover:text-primary transition-colors">О клане DST</a>
+              </div>
             </div>
             <div>
-              <h4 className="font-bold mb-3">Сообщество</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><a href="#" className="hover:text-primary">Discord</a></li>
-                <li><a href="#" className="hover:text-primary">Telegram</a></li>
-                <li><a href="#" className="hover:text-primary">VK</a></li>
-              </ul>
+              <h4 className="font-bold mb-4">Связь</h4>
+              <div className="space-y-2">
+                <a href="https://discord.gg/dst" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Icon name="MessageSquare" size={16} />
+                  Discord сервер
+                </a>
+                <a href="https://t.me/dst_clan" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Icon name="Send" size={16} />
+                  Telegram канал
+                </a>
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold mb-3">Контакты</h4>
-              <p className="text-sm text-muted-foreground">
-                По всем вопросам обращайтесь в нашу группу Discord
-              </p>
-            </div>
+          </div>
+          <div className="text-center text-muted-foreground border-t border-border pt-6">
+            <p>&copy; 2025 DST Clan. Все права защищены.</p>
+            <p className="text-sm mt-2">Death Strike Team • Основан в 2023</p>
           </div>
         </div>
       </footer>
